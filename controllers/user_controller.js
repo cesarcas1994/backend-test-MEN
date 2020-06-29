@@ -9,20 +9,11 @@ var controller = {
 // Create - create and Save a new user
 
     create: (req,res) =>{
-
-        // Validate Request
+        // pick parameters
         var parameters =  req.body;
 
         //Validate Request
         try {
-        
-            //var validate_dob = validator.isRFC3339(parameters.dob);
-            //var day = parameters.dob + '';
-            //var validate_dob = moment(day, 'YYYY-MM-DD').isValid();
-            //var validate_dob = isoDatestringValidator.isValidDate(parameters.dob + '');
-            //var day = parameters.dob + '';
-            //var validate_dob = !!parameters.dob && validator.isISO8601(parameters.dob.toISOString())
-            //var validate_dob = validator.isDate(parameters.dob + '');
 
             var validate_name = validator.isAlpha(parameters.name + '');
             var validate_dob = !validator.isEmpty(parameters.dob + '');
@@ -64,7 +55,7 @@ var controller = {
         }else{
             
             let name_sintax_error = (validate_name == true) ? '' : ' name need to be string.';
-            let dob_sintax_error = (validate_dob == true) ? '' : ' dob need to be ISO860.';
+            let dob_sintax_error = (validate_dob == true) ? '' : ' dob need to be date ISO860.';
             let address_sintax_error = (validate_address == true) ? '' : ' address need to be string.';
             let description_sintax_error = (validate_description == true) ? '' : ' description need to be string.';
 
@@ -121,14 +112,6 @@ var controller = {
         // Validate Request
         try {
         
-            //var validate_dob = validator.isRFC3339(parameters.dob);
-            //var day = parameters.dob + '';
-            //var validate_dob = moment(day, 'YYYY-MM-DD').isValid();
-            //var validate_dob = isoDatestringValidator.isValidDate(parameters.dob + '');
-            //var day = parameters.dob + '';
-            //var validate_dob = !!parameters.dob && validator.isISO8601(parameters.dob.toISOString())
-            //var validate_dob = validator.isDate(parameters.dob + '');
-
             var validate_name = validator.isAlpha(parameters.name + '');
             var validate_dob = !validator.isEmpty(parameters.dob + '');
             var validate_address = !validator.isEmpty(parameters.address + '');
@@ -179,7 +162,7 @@ var controller = {
         }else{
             
             let name_sintax_error = (validate_name == true) ? '' : ' name need to be string.';
-            let dob_sintax_error = (validate_dob == true) ? '' : ' dob need to be ISO860.';
+            let dob_sintax_error = (validate_dob == true) ? '' : ' dob need to be date ISO860.';
             let address_sintax_error = (validate_address == true) ? '' : ' address need to be string.';
             let description_sintax_error = (validate_description == true) ? '' : ' description need to be string.';
 

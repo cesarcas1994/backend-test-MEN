@@ -7,7 +7,7 @@ var UserSchema = Schema({
 
     id: Number,
     name: String,
-    dob: String,
+    dob: Date,
     address: String,
     description: String
 }, {
