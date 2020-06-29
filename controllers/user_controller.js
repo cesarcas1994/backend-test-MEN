@@ -54,7 +54,7 @@ var controller = {
             });
         }else{
             
-            let name_sintax_error = (validate_name == true) ? '' : ' name need to be string.';
+            let name_sintax_error = (validate_name == true) ? '' : ' name need to be string and contains only letters.';
             let dob_sintax_error = (validate_dob == true) ? '' : ' dob need to be date ISO860.';
             let address_sintax_error = (validate_address == true) ? '' : ' address need to be string.';
             let description_sintax_error = (validate_description == true) ? '' : ' description need to be string.';
@@ -161,7 +161,7 @@ var controller = {
             });
         }else{
             
-            let name_sintax_error = (validate_name == true) ? '' : ' name need to be string.';
+            let name_sintax_error = (validate_name == true) ? '' : ' name need to be string and contains only letters.';
             let dob_sintax_error = (validate_dob == true) ? '' : ' dob need to be date ISO860.';
             let address_sintax_error = (validate_address == true) ? '' : ' address need to be string.';
             let description_sintax_error = (validate_description == true) ? '' : ' description need to be string.';
