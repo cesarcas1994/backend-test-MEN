@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "f73edb53-e4f7-48ff-ba2d-4bd15d25560d",
+		"name": "backend-test",
+		"description": "This is a test exercise creating an api in node-js, espress, mongo-DB Atlas to simulate a CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create one user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Colombiano\",\r\n    \"dob\":\"2012-02-03\",\r\n    \"address\":\"Av Ejército Nacional 862, Polanco, Polanco II Secc, Miguel Hidalgo, 11550 Ciudad de México, CDMX\",\r\n    \"description\":\"good performance\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3900/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3900",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read all user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read one user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete one user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3900/users/5ef93780102f921524805789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3900",
+					"path": [
+						"users",
+						"5ef93780102f921524805789"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update one user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3900/users/5ef93780102f921524805789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3900",
+					"path": [
+						"users",
+						"5ef93780102f921524805789"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "400 -Invalid request- create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":414,\r\n    \"dob\":\"1994/01/22\",\r\n    \"address\":\"\",\r\n    \"description\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3900/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3900",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "404 -Invalid request- read one user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3900/users/12345",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3900",
+					"path": [
+						"users",
+						"12345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "404 -Invalid request- update one user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Pilar\",\r\n    \"dob\":\"1994-01-22\",\r\n    \"address\":\"Blvd. Miguel de Cervantes Saavedra, Granada, Miguel Hidalgo, 11529 Ciudad de México, CDMX\",\r\n    \"description\":\"very good performance\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3900/users/123456789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3900",
+					"path": [
+						"users",
+						"123456789"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "404 -Invalid request- delete one user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3900/users/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3900",
+					"path": [
+						"users",
+						"123"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -48,8 +48,7 @@ var controller = {
                }
 
                return res.status(200).send({
-                    message: 'Saved correctly',
-                    user: userStored
+                    userStored
                 });
             });
         }else{

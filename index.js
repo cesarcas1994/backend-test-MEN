@@ -17,7 +17,7 @@ mongoose.connect(uri, {
 
   //Create server and listen to HTTP requests
   app.listen(port,()=>{
-    console.log('Servidor corriendo en http://localhost:'+port);
+    console.log('Server running at http://localhost::'+port);
   });
 })
 .catch(err => console.log(err))
