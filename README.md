@@ -10,6 +10,15 @@ Build a RESTful API that can create/read/update/delete user data from a persiste
 2. Provide proper API documentation.
 3. Proper error handling should be used.
 
+## How to start
+
+Open the project directory in the terminal and type the commands below
+
+```bash
+npm install
+npm start
+```
+
 ### Bonus
 
 1. Provide proper unit tests.
@@ -121,4 +130,13 @@ You can import Api design on Postman with backend-test.postman_collection.json f
         `200 (Deleted) ` | `User deleted successfully!` 
         `404 (Invalid request)` | `User not found with id {id}`
         `500 (userStored error)` | `Could not delete user with id  {id}`
+
+#### Test API
+
+Mocha-Chai-mockgoose libraries were used to test the api without changing it, eg using post would not upload an item to the database since mockgoose creates a kind of layer that does not alter the database.
+
+```bash
+npm run test 
+```
+
 
