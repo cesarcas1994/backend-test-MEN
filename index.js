@@ -1,23 +1,11 @@
-'use strict'
+const app = require('./app');
+const db = require('./server');
 
-var mongoose = require('mongoose');
-var app = require('./app');
-var port = 3900;
+const PORT = process.env.PORT || 3900;
 
-//mongoose.set('useFindAndModify', false);
-//mongoose.Promise = global.Promise;
-
-const uri = "mongodb+srv://cesar:cesarcas@cluster0-xcvln.azure.mongodb.net/test?retryWrites=true&w=majority";
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => {
-  console.log("MongoDB Connected…");
-
-  //Create server and listen to HTTP requests
-  app.listen(port,()=>{
-    console.log('Server running at http://localhost::'+port);
+db.connect()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log('Listening on port: ' + PORT);
+    });
   });
-})
-.catch(err => console.log(err))

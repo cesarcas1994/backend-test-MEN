@@ -26,29 +26,5 @@ app.use((req, res, next) => {
 // Add prefixes to routes / load route
 app.use('/', user_routes);
 
-//Route or test method
-app.get('/testingget', (req, res) => {
-
-    return res.status(200).send({
-      curso: 'Master en Frameworks JS',
-      autor: 'Cesar Cas',
-      type: 'get' 
-    })
-    console.log('hi world!');
-});
-
-app.post('/testingpost', (req, res) => {
-
-    var user = req.body.user;
-
-    return res.status(200).send({
-      curso: 'Master en Frameworks JS',
-      autor: 'Cesar Cas',
-      type: 'post',
-      user_name: user 
-    })
-    console.log('hi world!');
-});
-
 // Export module
 module.exports = app;
