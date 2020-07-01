@@ -29,8 +29,8 @@ npm start
 
 You can import Api design on Postman with backend-test.postman_collection.json file: 
 
-1 - Now open Postman and click Import.
-2 - Select the JSON file. Once the selection is complete, you can see that the JSON file gets imported as a Postman collection in the application.
+1. Now open Postman and click Import.
+2. Select the JSON file. Once the selection is complete, you can see that the JSON file gets imported as a Postman collection in the application.
 
 ### API design readme
 
@@ -46,7 +46,7 @@ You can import Api design on Postman with backend-test.postman_collection.json f
         {
             "name": "Manolo",
             "dob": "1994-01-22",
-            "address": "Av Ejército Nacional 862, Polanco, Polanco II Secc, Miguel Hidalgo, 11550 Ciudad de México, CDMX",
+            "address": "Av EjÃ©rcito Nacional 862, Polanco, Polanco II Secc, Miguel Hidalgo, 11550 Ciudad de MÃ©xico, CDMX",
             "description": "very good performance"
         }
         ```
@@ -104,7 +104,7 @@ You can import Api design on Postman with backend-test.postman_collection.json f
         {
             "name": "Manolo",
             "dob": "1994-01-22",
-            "address": "Av Ejército Nacional 862, Polanco, Polanco II Secc, Miguel Hidalgo, 11550 Ciudad de México, CDMX",
+            "address": "Av EjÃ©rcito Nacional 862, Polanco, Polanco II Secc, Miguel Hidalgo, 11550 Ciudad de MÃ©xico, CDMX",
             "description": "bad performance"
         }
         ```
