@@ -10,6 +10,12 @@ Build a RESTful API that can create/read/update/delete user data from a persiste
 2. Provide proper API documentation.
 3. Proper error handling should be used.
 
+### Bonus
+
+1. Provide proper unit tests.
+2. Add a read only endpoint to fetch location information based off the user's address (use NASA or Mapbox APIs)
+2. Providing an online demo is welcomed, but not required.
+
 ## How to start
 
 Open the project directory in the terminal and type the commands below
@@ -18,12 +24,6 @@ Open the project directory in the terminal and type the commands below
 npm install
 npm start
 ```
-
-### Bonus
-
-1. Provide proper unit tests.
-2. Add a read only endpoint to fetch location information based off the user's address (use NASA or Mapbox APIs)
-2. Providing an online demo is welcomed, but not required.
 
 ### API design Postman
 
@@ -130,6 +130,26 @@ You can import Api design on Postman with backend-test.postman_collection.json f
         `200 (Deleted) ` | `User deleted successfully!` 
         `404 (Invalid request)` | `User not found with id {id}`
         `500 (userStored error)` | `Could not delete user with id  {id}`
+
+#### extra api 
+
+1. Read one user mapbox coordinates
+
+    This route gets a specific user mapbox coordinates for its address by its ids.
+    
+    - Request 
+        ```bash
+        GET http://localhost:3900/users/mapbox/:id
+        ```
+    - Possible returns
+
+        Return an object with a registered user.
+
+        Code | Answer
+        ------------ | -------------
+        `200 (OK)` | {}
+        `404 (Invalid request)` | `user not found with id {id}`
+        `500 (userStored error)` | `Error retrieving user with id {id}`
 
 #### Test API
 
