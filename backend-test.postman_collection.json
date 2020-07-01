@@ -13,7 +13,12 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"Colombiano\",\r\n    \"dob\":\"2012-02-03\",\r\n    \"address\":\"Av Ejército Nacional 862, Polanco, Polanco II Secc, Miguel Hidalgo, 11550 Ciudad de México, CDMX\",\r\n    \"description\":\"good performance\"\r\n}"
+					"raw": "{\r\n    \"name\":\"Paco\",\r\n    \"dob\":\"1994-01-22\",\r\n    \"address\":\"Av Ejército Nacional 862, Polanco, Polanco II Secc, Miguel Hidalgo, 11550 Ciudad de México, CDMX\",\r\n    \"description\":\"very good performance\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "http://localhost:3900/users",
@@ -76,8 +81,17 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Pilar\",\r\n    \"dob\":\"1995-02-25\",\r\n    \"address\":\"Blvd. Miguel de Cervantes Saavedra, Granada, Miguel Hidalgo, 11529 Ciudad de México, CDMX\",\r\n    \"description\":\"perfect performance\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:3900/users/5ef93780102f921524805789",
+					"raw": "http://localhost:3900/users/5ef937ea102f92152480578a",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -85,7 +99,7 @@
 					"port": "3900",
 					"path": [
 						"users",
-						"5ef93780102f921524805789"
+						"5ef937ea102f92152480578a"
 					]
 				}
 			},
@@ -114,6 +128,35 @@
 					"port": "3900",
 					"path": [
 						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "400 - Internal error - update one user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Pilar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3900/users/5ef937ea102f92152480578a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3900",
+					"path": [
+						"users",
+						"5ef937ea102f92152480578a"
 					]
 				}
 			},
@@ -185,6 +228,40 @@
 						"123"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "read one user mapbox coordinates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				},
+				"description": "take the adress of the id in the input, make a get call to the mapbox api sending that adress to get the coordinates of this which is finally the return of this call"
+			},
+			"response": []
+		},
+		{
+			"name": "404- Invalid request- read one user m.c.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3900/users/mapbox/1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3900",
+					"path": [
+						"users",
+						"mapbox",
+						"1234"
+					]
+				},
+				"description": "take the adress of the id in the input, make a get call to the mapbox api sending that adress to get the coordinates of this which is finally the return of this call"
 			},
 			"response": []
 		}

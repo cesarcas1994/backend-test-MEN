@@ -9,12 +9,13 @@ var controller = {
 // Create - create and Save a new user
 
     create: (req,res) =>{
-        // pick parameters
+
+        // Validate Request
         var parameters =  req.body;
 
         //Validate Request
         try {
-
+            
             var validate_name = validator.isAlpha(parameters.name + '');
             var validate_dob = !validator.isEmpty(parameters.dob + '');
             var validate_address = !validator.isEmpty(parameters.address + '');
@@ -53,8 +54,8 @@ var controller = {
             });
         }else{
             
-            let name_sintax_error = (validate_name == true) ? '' : ' name need to be string and contains only letters.';
-            let dob_sintax_error = (validate_dob == true) ? '' : ' dob need to be date ISO860.';
+            let name_sintax_error = (validate_name == true) ? '' : ' name need to be string and only letters.';
+            let dob_sintax_error = (validate_dob == true) ? '' : ' dob need to be ISO860.';
             let address_sintax_error = (validate_address == true) ? '' : ' address need to be string.';
             let description_sintax_error = (validate_description == true) ? '' : ' description need to be string.';
 
@@ -79,7 +80,7 @@ var controller = {
         });
     },
 
-// Read - return one users from the database.
+// Read - return one user from the database.
 
     findOne: (req, res) => {
         User.findById(req.params.id)
@@ -110,11 +111,11 @@ var controller = {
 
         // Validate Request
         try {
-        
-            var validate_name = validator.isAlpha(parameters.name + '');
-            var validate_dob = !validator.isEmpty(parameters.dob + '');
-            var validate_address = !validator.isEmpty(parameters.address + '');
-            var validate_description = !validator.isEmpty(parameters.description + '');
+
+            var validate_name = validator.isAlpha(parameters.name + '') && (parameters.name != null);
+            var validate_dob = !validator.isEmpty(parameters.dob + '') && (parameters.dob != null);
+            var validate_address = !validator.isEmpty(parameters.address + '') && (parameters.address != null);
+            var validate_description = !validator.isEmpty(parameters.description + '') && (parameters.description != null);
 
         } catch (error) {
             
@@ -160,8 +161,8 @@ var controller = {
             });
         }else{
             
-            let name_sintax_error = (validate_name == true) ? '' : ' name need to be string and contains only letters.';
-            let dob_sintax_error = (validate_dob == true) ? '' : ' dob need to be date ISO860.';
+            let name_sintax_error = (validate_name == true) ? '' : ' name need to be string.';
+            let dob_sintax_error = (validate_dob == true) ? '' : ' dob need to be ISO860.';
             let address_sintax_error = (validate_address == true) ? '' : ' address need to be string.';
             let description_sintax_error = (validate_description == true) ? '' : ' description need to be string.';
 
@@ -196,7 +197,7 @@ var controller = {
             });
         });
     }
-    
+
 }; // end controller
 
 module.exports = controller;
