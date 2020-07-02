@@ -1,7 +1,7 @@
 ﻿# Backend-test-MEN
 This is a backend-test, it consists of a CRUD with some other functionalities, using MongoDB Atlas, Express, Node JS (MEN)
 
-MongoDB Atlas database is stores in microsoft Azure Cloud on region / Virginia (eastus2) with a open access. 
+MongoDB Atlas database is stored in microsoft Azure Cloud on region / Virginia (eastus2) with a open access. 
 
 ## Instructions
 
@@ -29,7 +29,7 @@ npm start
 
 ### API Cloud version
 
-In order to put the application online, a web application was created in azure using a CI-CD with this repository.
+In order to put the application online, a web application was created in azure using a CD with this repository.
 
 so to test the online api you should only change:
 
