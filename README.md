@@ -27,6 +27,16 @@ npm install
 npm start
 ```
 
+### API Cloud version
+
+In order to put the application online, a web application was created in azure using a CI-CD with this repository.
+
+so to test the online api you should only change:
+
+"http://localhost:3900/" for "https://backend-test-men.azurewebsites.net/"
+
+example(Read all user): GET https://backend-test-men.azurewebsites.net/users 
+
 ### API design Postman
 
 You can import Api design on Postman with backend-test.postman_collection.json file: 
@@ -160,5 +170,25 @@ Mocha-Chai-mockgoose libraries were used to test the api without changing it, eg
 ```bash
 npm run test 
 ```
+
+#### API Cloud version design
+
+CI-CD: Objective any changes made to the master branch of the github repository of backend-test-MEN will be automatically reflected in the Azure application where it is stored allowing a CI (Continuous Integration) - CD (Continuous Deployment)
+
+1- Create pipeline connecting (github repository <-> azure devops pipeline <-> azure container registry) every time a change its made on the master branch of the repository it will be send has build to azure container registry, (azure equivalent to docker hub). 
+
+
+2- An azure web app service was created to host the application container, it was placed in the East Us region to guarantee a better connection with MongoDB Atlas stored in virginia usa. This is connected through webhook (azure container registry <-> webhook <-> azure docker web app service).
+
+time of a build about 60 seconds 
+
+
+###### API Cloud version design (Show links) 
+
+extra:
+
+https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/containers/acr-template?view=azure-devops
+
+https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-ci-cd
 
 
