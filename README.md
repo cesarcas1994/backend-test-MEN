@@ -1,5 +1,7 @@
-# Backend-test-MEN
+﻿# Backend-test-MEN
 This is a backend-test, it consists of a CRUD with some other functionalities, using MongoDB Atlas, Express, Node JS (MEN)
+
+MongoDB Atlas database is stores in microsoft Azure Cloud on region / Virginia (eastus2) with a open access. 
 
 ## Instructions
 
