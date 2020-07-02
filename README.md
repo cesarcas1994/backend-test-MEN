@@ -173,7 +173,7 @@ npm run test
 
 #### API Cloud version design
 
-CI-CD: Objective any changes made to the master branch of the github repository of backend-test-MEN will be automatically reflected in the Azure application where it is stored allowing a CI (Continuous Integration) - CD (Continuous Deployment)
+CI-CD: Objective any changes made to the master branch of the github repository of backend-test-MEN will be automatically reflected in the Azure application where it is stored allowing a CD (Continuous Deployment)
 
 1- Create pipeline connecting (github repository <-> azure devops pipeline <-> azure container registry) every time a change its made on the master branch of the repository it will be send has build to azure container registry, (azure equivalent to docker hub). 
 
