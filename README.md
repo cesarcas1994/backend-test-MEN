@@ -35,6 +35,8 @@ so to test the online api you should only change:
 
 "http://localhost:3900/" for "https://backend-test-men.azurewebsites.net/"
 
+---- azure backend-test-men is not active at the moment, to save costs in the cloud ------
+
 example(Read all user): GET https://backend-test-men.azurewebsites.net/users 
 
 ### API design Postman
